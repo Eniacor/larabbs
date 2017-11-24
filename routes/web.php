@@ -10,11 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/**
- * homePages Routes...
- */
+/* homePages Routes... */
 Route::get('/','PagesController@root')->name('root');
-/**
- * authentication Routes...
- */
+/* authentication Routes...*/
 Auth::routes();
+/* user */
+Route::resource('users','UsersController',['only'=>['show','update','edit']]);
