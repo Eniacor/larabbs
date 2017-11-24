@@ -10,5 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/**
+ * homePages Routes...
+ */
 Route::get('/','PagesController@root')->name('root');
+/**
+ * authentication Routes...
+ */
+Auth::routes();
