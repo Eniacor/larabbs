@@ -8399,3 +8399,15 @@ body {
   color: #c1c1c1;
 }
 
+.footer .container p a {
+  color: inherit;
+}
+
+/* user reigister page */
+
+.register-page img.captcha {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+

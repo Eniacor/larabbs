@@ -47,8 +47,17 @@ body{
             margin: 19px 0;
             color: #c1c1c1;
             a{
-                color:inherit'
+                color:inherit;
             }
         }
+    }
+}
+
+/* user reigister page */
+.register-page{
+    img.captcha{
+        margin-bottom:0px;
+        margin-top:10px;
+        cursor:pointer;
     }
 }
