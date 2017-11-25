@@ -8,13 +8,14 @@
         </div>
         @include('common.error')
         <div class="panel-body">
-            <form action="{{route('users.update',$user->id)}}" method="POST" accept-charset="UTF-8">
+            <form action="{{route('users.update',$user->id)}}" method="POST" accept-charset="UTF-8" enctype="multipart/form-data">
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-group">
                     <lable for="name-field">用户名</lable>
                     <input class="form-control" type="text" name="name" id="name-field" value="{{old('name',$user->name)}}" />
                 </div>
+
                  <div class="form-group">
                     <lable for="email-field">邮箱</lable>
                     <input class="form-control" type="text" name="email" id="email-field" value="{{old('email',$user->email)}}" />
@@ -24,6 +25,14 @@
                     <textarea class="form-control" type="text" name="introduction" id="introduction-field" row="3">
                         {{old('introduction',$user->introduction)}}
                     </textarea>
+                </div>
+                <div class="form-group">
+                    <lable for="" class="avatar-lable">用户头像</lable>
+                    <input type="file" name="avatar">
+                    @if($user->avatar)
+                    <br>
+                        <img class="thumbnail img-responsive" src="{{$user->avatar}}" width="200" />
+                    @endif
                 </div>
                  <div class="well well-sm">
                    <button class="btn btn-primary" type="submit">保存</button>
