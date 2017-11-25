@@ -12,22 +12,22 @@
                 <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="form-group">
-                    <lable for="name-field">用户名</lable>
+                    <label for="name-field">用户名</label>
                     <input class="form-control" type="text" name="name" id="name-field" value="{{old('name',$user->name)}}" />
                 </div>
 
                  <div class="form-group">
-                    <lable for="email-field">邮箱</lable>
+                    <label for="email-field">邮箱</label>
                     <input class="form-control" type="text" name="email" id="email-field" value="{{old('email',$user->email)}}" />
                 </div>
                  <div class="form-group">
-                    <lable for="introduction-field">个人简介</lable>
+                    <label for="introduction-field">个人简介</label>
                     <textarea class="form-control" type="text" name="introduction" id="introduction-field" row="3">
                         {{old('introduction',$user->introduction)}}
                     </textarea>
                 </div>
                 <div class="form-group">
-                    <lable for="" class="avatar-lable">用户头像</lable>
+                    <label class="avatar-label">用户头像</label>
                     <input type="file" name="avatar">
                     @if($user->avatar)
                     <br>
