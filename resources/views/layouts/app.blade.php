@@ -10,6 +10,7 @@
 	<title>@yield('title','LaraBBS')-Laravel进阶教程</title>
 	<!-- styles -->
 	<link href="{{asset('css/app.css')}}" rel="stylesheet">
+	@yield('styles');
 </head>
 
 <body>
@@ -23,6 +24,7 @@
 	</div>
     <!-- script-->
     <script src="{{asset('js/app.js')}}"></script>
+	@yield('scripts');
 </body>
 
 </html>
