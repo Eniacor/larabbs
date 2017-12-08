@@ -20,6 +20,9 @@ class TopicObserver
     }
     public function saving(Topic $topic)
     {
+        //xss
+        $topic->body=clean($topic->body,'user_topic_body');
+        //seo
         $topic->excerpt=make_excerpt($topic->body);
     }
 }
