@@ -11,7 +11,7 @@
 	<meta name="description" content="@yield('description','LaraBBS 爱好者社区')" />
 	<!-- styles -->
 	<link href="{{asset('css/app.css')}}" rel="stylesheet">
-	@yield('styles');
+	@yield('styles')
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 	</div>
     <!-- script-->
     <script src="{{asset('js/app.js')}}"></script>
-	@yield('scripts');
+	@yield('scripts')
 </body>
 
 </html>
