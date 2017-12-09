@@ -17,7 +17,9 @@ Auth::routes();
 /* user */
 Route::resource('users','UsersController',['only'=>['show','update','edit']]);
 /* topic */
-Route::resource('topics', 'TopicsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('topics', 'TopicsController', ['only' => ['index','create', 'store', 'update', 'edit', 'destroy']]);
+/* seo slug */
+Route::get('topics/{topic}/{slug?}','TopicsController@show')->name('topics.show');
 /* categories */
 Route::resource('categories','CategoriesController',['only'=>['show']]);
 /* 上传图片 */
