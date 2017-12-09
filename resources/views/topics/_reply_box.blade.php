@@ -1,22 +1,14 @@
-@if(count($replies))
-    <ul class="list-group">
-        @foreach($replies as $reply)
-             <li class="list-group-item">
-                <a href="{{$reply->topic->link(['#reply'.$reply->id])}}">
-                    {{$reply->topic->title}}
-                </a>
-                <div class="reply-content" style="margin:6px 0;">
-                    {!! $reply->content !!}
-                </div>
-                <div class="meta">
-                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                    回复于{{ $reply->created_at->diffForHumans()}}
-                </div>
-            </li>
-        @endforeach
-    </ul>
-@else
-    <div class="empty-block">暂无数据</div>
-@endif
-{{--  分页  --}}
-{!! $replies->appends(Request::except('page'))->render()!!}
+@include('common.error')
+<div class="reply-box">
+    <form action="{{route('replies.store')}}" method="POST" accept-charset="UTF-8">
+        <input type="hidden" name="_token" value="{{csrf_token()}}">
+        <input type="hidden" name="topic_id" value="{{$topic->id}}">
+        <div class="form-group">
+            <textarea class="form-control" name="content" rows="3" placeholder="分享你的想法"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-share"></i>回复
+        </button>
+    </form>
+</div>
+<hr>
