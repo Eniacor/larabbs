@@ -28,3 +28,5 @@ Route::post('upload_image','TopicsController@uploadImage')->name('topics.upload_
 Route::resource('replies', 'RepliesController', ['only' => ['store','destroy']]);
 /* notify */
 Route::resource('notifications','NotificationsController',['only'=>['index']]);
+/* permission */
+Route::get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
