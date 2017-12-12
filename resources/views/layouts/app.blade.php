@@ -23,6 +23,10 @@
 		</div>
         @include('layouts._footer')
 	</div>
+	{{--  sudo-su用户切换工具  --}}
+	@if (app()->isLocal())
+        @include('sudosu::user-selector')
+    @endif
     <!-- script-->
     <script src="{{asset('js/app.js')}}"></script>
 	@yield('scripts')
