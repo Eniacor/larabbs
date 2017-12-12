@@ -11,7 +11,7 @@
 |
 */
 /* homePages Routes... */
-Route::get('/','PagesController@root')->name('root');
+Route::get('/','PagesController@index')->name('root');
 /* authentication Routes...*/
 Auth::routes();
 /* user */
