@@ -7,8 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<!-- csrf token -->
 	<meta name="csrf-token" content="{{csrf_token()}}">
-	<title>@yield('title','LaraBBS')-Laravel进阶教程</title>
-	<meta name="description" content="@yield('description','LaraBBS 爱好者社区')" />
+	<title>@yield('title','LaraBBS')-{{setting('site_name','Laravel进阶教程')}}</title>
+	<meta name="description" content="@yield('description',setting('seo_description', 'LaraBBS 爱好者社区。'))" />
+	<meta name="description" content="@yield('keyword', setting('seo_keyword', 'LaraBBS,社区,论坛,开发者论坛'))" />	
 	<!-- styles -->
 	<link href="{{asset('css/app.css')}}" rel="stylesheet">
 	@yield('styles')
